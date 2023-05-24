@@ -1,0 +1,4 @@
+Install intellij
+Download JDK
+Update Maven depn
+install maven
