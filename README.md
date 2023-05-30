@@ -10,8 +10,6 @@ The e-commerce system consists of the following microservices:
 
 - **Order Service**: Handles order creation and processing
 
-- **Shipping Service**: Handles order fulfillment and shipping operations.
-
 - **Email Service**: Handles mock sending of emails
 
 
@@ -19,8 +17,6 @@ The e-commerce system consists of the following microservices:
 
 Follow the steps below to set up the e-commerce system on your local machine:
 
-
-Certainly! Here's an updated version of the setup instructions, providing a detailed breakdown for installing the prerequisites, including IntelliJ IDEA:
 
 ### Prerequisites
 
@@ -51,7 +47,9 @@ Follow the steps below to set up the e-commerce system on your local machine:
 1. Clone the repository:
 
    ```
-   git clone <repository-url>
+   git clone https://github.com/Joeoh/MicroServices-Workshop.git
+   ```
+   ```
    cd MicroServices-Workshop
    ```
 
