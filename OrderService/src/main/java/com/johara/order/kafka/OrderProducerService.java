@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class OrderProducerService {
-    private static final String TOPIC_NAME = "order-placed-topic";
+    private static final String TOPIC_NAME = "orders";
     private static final Logger LOGGER = LoggerFactory.getLogger(OrderProducerService.class);
 
     private final KafkaTemplate<Object, String> kafkaTemplate;
