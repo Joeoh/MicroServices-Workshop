@@ -18,7 +18,7 @@ public class OrderPlacedEventListener {
         this.emailSendingService = emailSendingService;
     }
 
-    @KafkaListener(topics = "order-placed-topic", groupId = "${spring.kafka.consumer.group-id}")
+    @KafkaListener(topics = "orders", groupId = "${spring.kafka.consumer.group-id}")
     public void handleOrderPlacedEvent(OrderMessage orderMessage) {
         LOGGER.info("Received OrderPlacedEvent for order: {}", orderMessage.getOrderId());
 
