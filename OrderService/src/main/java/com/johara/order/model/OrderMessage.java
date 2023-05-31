@@ -17,6 +17,8 @@ public class OrderMessage {
 
     private int quantity;
 
+    private String status;
+
     private LocalDateTime orderDate;
 
     public OrderMessage() {
@@ -79,4 +81,7 @@ public class OrderMessage {
     public void setOrderDate(LocalDateTime orderDate) {
         this.orderDate = orderDate;
     }
+
+
+    public void setStatus(String status){ this.status = status;}
 }

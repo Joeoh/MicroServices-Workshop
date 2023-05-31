@@ -22,17 +22,20 @@ public class Order {
 
     private LocalDateTime orderDate;
 
+    private String status;
+
     // Constructors
 
     public Order() {
     }
 
-    public Order(String orderId, Long customerId, Long productId, int quantity, LocalDateTime orderDate) {
+    public Order(String orderId, Long customerId, Long productId, int quantity, LocalDateTime orderDate, String status) {
         this.orderId = orderId;
         this.customerId = customerId;
         this.productId = productId;
         this.quantity = quantity;
         this.orderDate = orderDate;
+        this.status = status;
     }
 
     // Getters and Setters
@@ -84,4 +87,8 @@ public class Order {
     public void setOrderDate(LocalDateTime orderDate) {
         this.orderDate = orderDate;
     }
+
+    public void setStatus(String status){this.status = status;}
+
+    public String getStatus(){return status;}
 }
