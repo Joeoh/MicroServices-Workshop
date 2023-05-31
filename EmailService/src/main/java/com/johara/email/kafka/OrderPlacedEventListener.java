@@ -13,6 +13,7 @@ public class OrderPlacedEventListener {
     private static final Logger LOGGER = LoggerFactory.getLogger(OrderPlacedEventListener.class);
 
     private final EmailSendingService emailSendingService;
+
     @Autowired
     public OrderPlacedEventListener(EmailSendingService emailSendingService) {
         this.emailSendingService = emailSendingService;
