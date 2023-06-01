@@ -22,20 +22,21 @@ public class Order {
 
     private LocalDateTime orderDate;
 
-    private String status;
+    private String status, topic;
 
     // Constructors
 
     public Order() {
     }
 
-    public Order(String orderId, Long customerId, Long productId, int quantity, LocalDateTime orderDate, String status) {
+    public Order(String orderId, Long customerId, Long productId, int quantity, LocalDateTime orderDate, String status, String topic) {
         this.orderId = orderId;
         this.customerId = customerId;
         this.productId = productId;
         this.quantity = quantity;
         this.orderDate = orderDate;
         this.status = status;
+        this.topic = topic;
     }
 
     // Getters and Setters
@@ -91,4 +92,9 @@ public class Order {
     public void setStatus(String status){this.status = status;}
 
     public String getStatus(){return status;}
+
+
+    public String getTopic(){return topic;}
+
+    public void setTopic(String topic){this.topic = topic;}
 }

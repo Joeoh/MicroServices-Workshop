@@ -18,6 +18,7 @@ public class OrderMessage {
     private int quantity;
 
     private String status;
+    private String topic;
 
     private LocalDateTime orderDate;
 
@@ -84,4 +85,8 @@ public class OrderMessage {
 
 
     public void setStatus(String status){ this.status = status;}
+
+    public void setTopic(String topic){this.topic = topic;}
+
+    public String getTopic(){return topic;}
 }

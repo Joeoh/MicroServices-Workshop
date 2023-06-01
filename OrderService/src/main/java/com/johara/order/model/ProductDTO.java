@@ -7,7 +7,9 @@ public class ProductDTO {
     private String name;
     private String description;
     private String status;
+    private String topic;
     private double price;
+
 
     public Long getId() {
         return id;
@@ -46,4 +48,10 @@ public class ProductDTO {
     public String getStatus(){
         return status;
     }
+
+
+    public void setTopic(String topic){this.topic = topic;}
+
+    public String getTopic(){return topic;}
+
 }

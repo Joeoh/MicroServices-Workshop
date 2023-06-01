@@ -1,21 +1,26 @@
 package com.johara.order.controller;
 
+import com.johara.order.client.ProductServiceClient;
 import com.johara.order.model.Order;
+import com.johara.order.model.ProductDTO;
 import com.johara.order.repository.OrderRepository;
 import com.johara.order.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/orders")
 public class OrderController {
     private final OrderRepository orderRepository;
     private OrderService orderService;
+    private ProductServiceClient productServiceClient;
 
     @Autowired
     public OrderController(OrderRepository orderRepository, OrderService orderService) {
@@ -62,4 +67,21 @@ public class OrderController {
     public List<Order> getAllOrders() {
         return orderRepository.findAll();
     }
+
+
+
+    @GetMapping("/by-topic/{topic}")
+    public ResponseEntity<List<Order>> getOrdersByField(@PathVariable String topic) {
+        List<Order> ordersByTopic = orderRepository.findAll().stream()
+                .filter(order -> order.getTopic().equals(topic))
+                .collect(Collectors.toList());
+        if (!ordersByTopic.isEmpty()) {
+            return ResponseEntity.ok(ordersByTopic);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+
+
 }
