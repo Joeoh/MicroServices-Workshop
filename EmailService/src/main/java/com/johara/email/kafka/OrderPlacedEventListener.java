@@ -24,5 +24,8 @@ public class OrderPlacedEventListener {
 
         // Call the email service to send the email
         emailSendingService.sendOrderConfirmationEmail(orderMessage);
+
+
+        // have another one which could send a cancellation email
     }
 }

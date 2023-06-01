@@ -6,7 +6,10 @@ public class ProductDTO {
     private Long id;
     private String name;
     private String description;
+    private String status;
+    private String topic;
     private double price;
+
 
     public Long getId() {
         return id;
@@ -39,4 +42,16 @@ public class ProductDTO {
     public void setPrice(double price) {
         this.price = price;
     }
+
+    public void setStatus(String status){this.status = status;}
+
+    public String getStatus(){
+        return status;
+    }
+
+
+    public void setTopic(String topic){this.topic = topic;}
+
+    public String getTopic(){return topic;}
+
 }

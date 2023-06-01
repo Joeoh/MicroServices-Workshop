@@ -32,6 +32,14 @@ public class ProductServiceClient {
         return response.getBody();
     }
 
+    public ProductDTO getProductByTopic(String productTopic){
+        ServiceInstance productInstance = getServiceInstance();
+        String productUrl = productInstance.getUri().toString() + PRODUCTS_ENDPOINT + PRODUCT_ID_PARAM;
+        ResponseEntity<ProductDTO> response = restTemplate.getForEntity(productUrl, ProductDTO.class, productTopic);
+        return response.getBody();
+
+    }
+
     public ProductDTO getProductById(Long productId) {
         ServiceInstance productInstance = getServiceInstance();
         String productUrl = productInstance.getUri().toString() + PRODUCTS_ENDPOINT + PRODUCT_ID_PARAM;

@@ -17,3 +17,4 @@ public class EmailSendingService {
         // Use the orderMessage to retrieve necessary information for the email content, such as customer email, product details, etc.
     }
 }
+x
